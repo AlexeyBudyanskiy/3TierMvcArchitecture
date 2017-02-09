@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Vocabulary.WEB.AutomapperRegistrations;
 
 namespace Vocabulary.WEB
 {
@@ -15,7 +12,7 @@ namespace Vocabulary.WEB
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            AutoMapperWebConfiguration.Configure();
+            AutoMapperConfiguration.Configure();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }

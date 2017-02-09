@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
+using System.Linq;
 using Vocabulary.BLL.DTO;
 using Vocabulary.BLL.Exceptions;
 using Vocabulary.BLL.Interfaces;
@@ -27,7 +28,7 @@ namespace Vocabulary.BLL.Services
 
         public IEnumerable<ExampleDto> GetAll()
         {
-            var examples = _unitOfWork.Examples.GetAll();
+            var examples = _unitOfWork.Examples.GetAll().ToList();
             var examplesDto = Mapper.Map<IEnumerable<ExampleDto>>(examples);
 
             return examplesDto;

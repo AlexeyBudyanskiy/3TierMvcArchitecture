@@ -25,9 +25,9 @@ namespace Vocabulary.WEB.Filters
             _stopwatch.Stop();
             if (filterContext.RequestContext.HttpContext.Request.Url != null)
             {
-                //_logger.Debug(
-                //    $@"{filterContext.Controller}.{filterContext.ActionDescriptor.ActionName}|Perfomance of the method: {filterContext
-                //        .RequestContext.HttpContext.Request.Url.AbsoluteUri} is {_stopwatch.ElapsedMilliseconds} miliseconds");
+                _logger.Debug(
+                    $@"{filterContext.Controller}.{filterContext.ActionDescriptor.ActionName}|Perfomance of the method: {filterContext
+                        .RequestContext.HttpContext.Request.Url.AbsoluteUri} is {_stopwatch.ElapsedMilliseconds} miliseconds");
             }
         }
     }

@@ -16,10 +16,10 @@ namespace Vocabulary.WEB.Filters
         {
             if (filterContext.RequestContext.HttpContext.Request.Url != null)
             {
-                //_logger.Debug(
-                //    $@"{filterContext.Controller}.{filterContext.ActionDescriptor.ActionName}|Method uri:{filterContext
-                //        .RequestContext.HttpContext.Request.Url.AbsoluteUri}, " +
-                //    $@"Client IP: {filterContext.HttpContext.Request.UserHostAddress}, ");
+                _logger.Debug(
+                    $@"{filterContext.Controller}.{filterContext.ActionDescriptor.ActionName}|Method uri:{filterContext
+                        .RequestContext.HttpContext.Request.Url.AbsoluteUri}, " +
+                    $@"Client IP: {filterContext.HttpContext.Request.UserHostAddress}, ");
             }
         }
     }

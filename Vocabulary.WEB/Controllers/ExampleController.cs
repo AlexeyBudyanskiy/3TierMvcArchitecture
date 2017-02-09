@@ -17,7 +17,7 @@ namespace Vocabulary.WEB.Controllers
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public ActionResult GetAll()
         {
             var examplesDto = _exampleService.GetAll();
             var examplesViewModel = Mapper.Map<IEnumerable<ExampleViewModel>>(examplesDto);

@@ -6,6 +6,7 @@ using Ninject.Modules;
 using Ninject.Web.Common;
 using Vocabulary.BLL.Infrastructure;
 using Vocabulary.WEB;
+using Vocabulary.WEB.DependencyResolvers;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NinjectWebCommon), "Stop")]
@@ -41,7 +42,7 @@ namespace Vocabulary.WEB
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
-            var modules = new INinjectModule[] { new ServiceModule("OnlineGameStore") };
+            var modules = new INinjectModule[] { new ServiceModule("ExampleDatabase") };
 
             kernel.Load(modules);
 
@@ -66,6 +67,7 @@ namespace Vocabulary.WEB
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            System.Web.Mvc.DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }        
     }
 }

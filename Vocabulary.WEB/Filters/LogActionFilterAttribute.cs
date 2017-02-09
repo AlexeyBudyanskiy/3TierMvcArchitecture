@@ -37,7 +37,7 @@ namespace Vocabulary.WEB.Filters
                 logResult = objParams.Aggregate(logResult, (current, propertyInfo) => current + $"Name: {propertyInfo.Name} | Value: {propertyInfo.GetValue(param.Value)}, ");
             }
 
-            //_logger.Debug(logResult);
+            _logger.Debug(logResult);
         }
     }
 }
